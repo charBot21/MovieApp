@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Movie</string>
+
+    <!-- LoginView -->
+    <string name="login_input_user_hint"> Username </string>
+    <string name="login_input_password_hint"> Password </string>
+    <string name="login_button_label"> Login </string>
+
+    <!-- Login Presenter -->
+    <string name="login_email_empty"> Email cannot be empty </string>
+    <string name="login_email_invalid"> Invalid email format </string>
+    <string name="login_password_empty"> Password cannot be empty </string>
+    <string name="login_success"> Welcome %s </string>
+    <string name="login_welcome_back"> Welcome back </string>
+
+
+    <string name="image_description"> Image </string>
+
+    <string name="menu_title"> Search </string>
+    <string name="enter_title"> Enter the title </string>
+
+    <!-- Buttons -->
+    <string name="btn_ok">Ok</string>
+    <string name="connection">Connect</string>
+
+    <!-- Bottom Navigation -->
+    <string name="action_popular"> Popular </string>
+    <string name="action_top_rated"> Top Rated </string>
+    <string name="action_upcoming"> Upcoming </string>
+
+    <!-- Network Message -->
+    <string name="title_network"> Network Connection </string>
+    <string name="desc_network"> Please check your internet connection. </string>
+    <string name="connected_network">Connected</string>
+
+    <string name="txt_prueba"> Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+        software like Aldus PageMaker including versions of Lorem Ipsum. </string>
+
+    <string name="hello_blank_fragment">  </string>
+</resources>
