@@ -6,14 +6,13 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.carlostorres.movie.home.data.local.entity.Movies
-import com.carlostorres.movie.home.data.model.TopResults
 
 @Dao
-interface MovieDao {
+interface UpcomingDao {
 
     @Query("SELECT * from movies_table")
-    fun getMovies(): LiveData<List<Movies>>
+    fun allUpcoming(): LiveData<List<Movies>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertMovie(movies: Movies)
+    fun insertUpcomingMovie(movies: Movies)
 }

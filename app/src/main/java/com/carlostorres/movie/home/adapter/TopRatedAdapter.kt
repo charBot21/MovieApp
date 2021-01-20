@@ -10,12 +10,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.carlostorres.movie.R
+import com.carlostorres.movie.home.data.local.entity.Movies
 import com.carlostorres.movie.home.data.model.TopResults
 import com.carlostorres.movie.utils.Environment.IMAGE_ENDPOINT
 
-class TopRatedAdapter(  val topRatedList: List<TopResults>,
-                        val onItemClickListener: OnItemClickListener<TopResults> ):
-    RecyclerView.Adapter<TopRatedAdapter.TopViewHolder>(), Filterable {private var topFilterList: List<TopResults> = topRatedList
+class TopRatedAdapter(val topRatedList: List<Movies>,
+                      val onItemClickListener: OnItemClickListener<Movies> ):
+    RecyclerView.Adapter<TopRatedAdapter.TopViewHolder>(), Filterable {
+
+    private var topFilterList: List<Movies> = topRatedList
 
     override fun getFilter(): Filter {
         return object : Filter() {
@@ -33,7 +36,7 @@ class TopRatedAdapter(  val topRatedList: List<TopResults>,
             }
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                topFilterList = results?.values as List<TopResults>
+                topFilterList = results?.values as List<Movies>
                 notifyDataSetChanged()
             }
 

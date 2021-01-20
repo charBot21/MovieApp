@@ -1,6 +1,8 @@
 package com.carlostorres.movie.home.presenter
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.carlostorres.movie.home.data.local.MoviesRoomDatabase
 import com.carlostorres.movie.home.data.local.entity.Movies
 import com.carlostorres.movie.home.data.model.TopResults
 import com.carlostorres.movie.home.manager.TopRated
@@ -9,8 +11,6 @@ class TopRatedPresenter (
     private val topRatedView: TopRatedContract.TopRatedView,
     private val topRated: TopRated
 ): TopRatedContract.TopRatedPresenter, TopRatedContract.TopRatedData {
-
-    private val allMovies: MutableLiveData<List<Movies>> = MutableLiveData()
 
     init {
         getRequestTopMovies()

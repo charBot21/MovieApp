@@ -4,19 +4,20 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.carlostorres.movie.home.data.local.dao.MovieDao
+import com.carlostorres.movie.home.data.local.dao.PopularDao
+import com.carlostorres.movie.home.data.local.dao.UpcomingDao
 import com.carlostorres.movie.home.data.local.entity.Movies
 
 @Database(entities = [Movies::class], version = 1)
-abstract class MoviesRoomDatabase: RoomDatabase() {
+abstract class UpcomingRoomDatabase: RoomDatabase() {
 
-    abstract fun moviesDao(): MovieDao
+    abstract fun upcomingDao(): UpcomingDao
 
     companion object {
         @Volatile
-        private var INSTANCE: MoviesRoomDatabase ?= null
+        private var INSTANCE: UpcomingRoomDatabase ?= null
 
-        fun getDatabase(context: Context): MoviesRoomDatabase {
+        fun getDatabase(context: Context): UpcomingRoomDatabase {
             val tmpInstance = INSTANCE
 
             if ( tmpInstance != null ) {
@@ -24,13 +25,14 @@ abstract class MoviesRoomDatabase: RoomDatabase() {
             }
             synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    MoviesRoomDatabase::class.java,
-                    "movies_database"
+                        context.applicationContext,
+                        UpcomingRoomDatabase::class.java,
+                        "upcoming_database"
                 ).allowMainThreadQueries().build()
                 INSTANCE = instance
                 return instance
             }
         }
     }
+
 }
